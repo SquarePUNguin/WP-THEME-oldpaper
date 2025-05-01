@@ -1,6 +1,6 @@
-#OLDPAPER
+# OLDPAPER
 
-##Файл Темы созданный мною для моего портфолио
+#### Файл Темы созданный мною для моего портфолио
 
 все шрифты в проекте взяты с Google Fonts
 [Anonimus Pro](https://fonts.google.com/specimen/Anonymous+Pro)
