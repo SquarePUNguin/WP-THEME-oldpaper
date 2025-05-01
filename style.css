@@ -1,0 +1,180 @@
+/*
+Theme Name: OLDPAPER
+Author: SquarePUNguin
+Description:theme made by ME(SquarePUNguin) for my portfolio design was also me by me on figma https://www.figma.com/design/HxXJiQ5ii2mXH8X0CuhAID/
+Version: 1.0.01
+Requires at least: 5.0
+Tested up to: 6.8.1
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+    @font-face {
+        font-family: "Playfair";
+        src: url("assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Playfair";
+        src: url("assets/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf");
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: "SourceSerif";
+        src: url("assets/fonts/Source_serif/SourceSerif4-VariableFont_opsz,wght.ttf");
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "SourceSerif";
+        src: url("assets/fonts/Source_serif/SourceSerif4-italic-VariableFont_opsz,wght.ttf");
+        font-style: italic
+    }
+    @font-face{
+        font-family:"HandWR";
+        src:url("assets/fonts/Caveat/Caveat-VariableFont_wght.ttf");
+        font-style:normal;
+    }
+    @font-face {
+        font-family: "AnonimusPro";
+        src: url("assets/fonts/Anonimus_Pro/AnonymousPro-Regular.ttf");
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "AnonimusPro";
+        src: url("assets/fonts/Anonimus_Pro/AnonymousPro-Italic.ttf");
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "AnonimusPro";
+        src: url("assets/fonts/Anonimus_Pro/AnonymousPro-Bold.ttf");
+        font-style: normal;
+        font-weight: bold;
+    }
+    @font-face {
+        font-family: "AnonimusPro";
+        src: url("assets/fonts/Anonimus_Pro/AnonymousPro-BoldItalic.ttf");
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    :root {
+        /*colors*/
+        --bgc: #E2D9C7;
+        --dark: #000000;
+        --secondary: #8F0606;
+        --secondarybrighter: #c30000;
+    }
+
+    * {
+        /* GOD DEAM THE MARGINS! AND THE SUN!!!!!*/
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .main{
+        --marg:2vw;
+        margin-left: var(--marg);
+        margin-right:var(--marg);
+        font-size: 1rem;
+    }
+    body,
+    html {
+
+        width: 100vw;
+        height: 100vh;
+    }
+
+    html {
+        background-color: var(--bgc);
+        margin: 0px;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    /*navbar*/
+    
+    .navbar-menu,header :has(.navbar-menu){
+        max-width: 100vw;
+    }
+    .sub-menu{
+        display: none;
+        position:absolute;
+        background-color: var(--bgc);
+        --border: solid var(--dark);
+        border-left: var(--border);
+        border-right: var(--border);
+        border-bottom:var(--border);
+    }
+    .sub-menu>*>.sub-menu{
+        position:static;
+        border:none;
+        margin-left:10px;
+    }
+    .navbar-menu a{
+        color:var(--secondary);
+    }
+    .navbar-menu a:visited{
+        color:var(--secondarybrighter);
+        text-decoration: underline dotted 2px;
+    }
+    button[name="expand"]{
+        background:none;
+        border:none;
+        text-align: center;
+    }
+    button[name="expand"]::after{
+        content:"≡";
+        vertical-align:bottom;
+    }
+    .menu-item[sub-halt]>button[name="expand"]::after{
+        content: "⨯";
+    }
+    /*posts*/
+    .main div.post,.main div.post div{
+		border:4px var(--secondary) solid;
+		border-radius: 4px;
+		padding:4%;
+		overflow-y: scroll;
+	}
+	.main .post>div{
+		width:100%;
+		height: 100%;
+		margin:0px;
+	}
+	.main .post h3{
+		font-size: clamp(0.5rem,1.5vw,10rem);
+		text-align:center;
+	}
+	.main .post h3 a{
+		color:var(--secondary);
+		text-decoration:underline;
+	}
+	.main .post h3 a:visited{
+		color:var(--secondarybrighter);
+		text-decoration:underline;
+	}
+	.main .post p{
+		font-size: clamp(0.5rem,1vw,10rem);
+	}
+    /*unsorted*/
+        /*tables*/
+        .main ul,.main table{
+            font-family: "HandWR";
+            font-weight: lighter;
+        }
+        .main th{
+            font-family: "AnonimusPro";
+            font-weight:bolder;
+            font-size:1.5rem;
+        }
+        .carusel figure:not(:nth-child(1)),.carusel figure:not(:nth-child(2)),.carusel figure:not(:nth-child(3)){
+            display: none;
+        }
